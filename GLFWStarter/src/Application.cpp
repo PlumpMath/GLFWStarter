@@ -1,6 +1,7 @@
-#include <GLFW\glfw3.h>
-
+#include "gl_core_4_4.h"
 #include "Application.h"
+
+#include <GLFW\glfw3.h>
 
 Application::Application()
 {
@@ -20,6 +21,9 @@ bool Application::Setup(int a_iWindowWidth, int a_iWindowHeight)
 	if (!glfwInit())
 		return false;
 
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
+
 	/* Create a windowed mode window and its OpenGL context */
 	m_gWindow = glfwCreateWindow(m_iWindowWidth, m_iWindowHeight, "Hello World", NULL, NULL);
 
@@ -31,6 +35,15 @@ bool Application::Setup(int a_iWindowWidth, int a_iWindowHeight)
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(m_gWindow);
+
+	/*OpenGL 4.4 setup*/
+	if (ogl_LoadFunctions() == ogl_LOAD_FAILED)
+	{
+		/*We didn't load properly, gracefully exit*/
+		glfwDestroyWindow(m_gWindow);
+		glfwTerminate();
+		return false;
+	}
 
 	return true;
 }
@@ -46,8 +59,17 @@ void Application::Run()
 
 	while (!glfwWindowShouldClose(m_gWindow))
 	{
+		/* Render here */
+		glClear(GL_COLOR_BUFFER_BIT);
+
 		Update();
 		Draw();
+
+		/* Swap front and back buffers */
+		glfwSwapBuffers(m_gWindow);
+
+		/* Poll for and process events */
+		glfwPollEvents();
 	}
 
 	Unload();
@@ -63,14 +85,7 @@ void Application::Update()
 
 void Application::Draw()
 {
-	/* Render here */
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	/* Swap front and back buffers */
-	glfwSwapBuffers(m_gWindow);
-
-	/* Poll for and process events */
-	glfwPollEvents();
+	
 }
 
 void Application::Unload()
