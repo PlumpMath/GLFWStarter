@@ -160,7 +160,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Release\GLFWStarter.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Release\GLFWStarter.tlog\CL.command.1.tlog" />
+    <None Include="Release\GLFWStarter.tlog\CL.read.1.tlog" />
+    <None Include="Release\GLFWStarter.tlog\CL.write.1.tlog" />
+    <None Include="Release\GLFWStarter.tlog\GLFWStarter.lastbuildstate" />
+    <None Include="Release\GLFWStarter.tlog\link.command.1.tlog" />
+    <None Include="Release\GLFWStarter.tlog\link.read.1.tlog" />
+    <None Include="Release\GLFWStarter.tlog\link.write.1.tlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\Application.h" />
+    <ClInclude Include="inc\Game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
