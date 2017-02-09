@@ -1,8 +1,8 @@
-#include "Application.h"
+#include "Game.h"
 
 int main(int argc, char **argv)
 {
-	Application *pApp = new Application();
+	Application *pApp = new Game();
 
 	if (pApp->Setup(1360, 768))
 	{
