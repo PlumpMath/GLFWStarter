@@ -163,6 +163,7 @@
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\gl_core_4_4.c" />
+    <ClCompile Include="src\lodepng.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +182,7 @@
     <ClInclude Include="inc\Application.h" />
     <ClInclude Include="inc\Game.h" />
     <ClInclude Include="inc\gl_core_4_4.h" />
+    <ClInclude Include="inc\lodepng.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
