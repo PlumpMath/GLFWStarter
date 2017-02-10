@@ -13,6 +13,7 @@ public:
 
 	virtual void Update();
 	virtual void Draw();
+	virtual void DrawTexturedQuad(float a_x, float a_y, float a_w, float a_h);
 
 protected:
 	unsigned int m_uiVao; /*Vertex Array Object*/
@@ -20,6 +21,8 @@ protected:
 	unsigned int m_uiIbo; /*Index Buffer Object*/
 
 	unsigned int m_uiShader; /*Shader Handle*/
+
+	unsigned int m_uiTexture; /*Texture Handle*/
 
 private:
 };

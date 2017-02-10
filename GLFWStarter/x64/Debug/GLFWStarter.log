@@ -1,1 +1,4 @@
-﻿  GLFWStarter.vcxproj -> C:\Users\s171680\Documents\GitHub\GLFWStarter\x64\Debug\GLFWStarter.exe
+﻿  Game.cpp
+c:\users\s171680\documents\github\glfwstarter\glfwstarter\src\game.cpp(216): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s171680\documents\github\glfwstarter\glfwstarter\src\game.cpp(218): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  GLFWStarter.vcxproj -> C:\Users\s171680\Documents\GitHub\GLFWStarter\x64\Debug\GLFWStarter.exe
